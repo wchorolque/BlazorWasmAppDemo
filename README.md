@@ -1,6 +1,6 @@
 # BlazorWasmAppDemo
 
 Proyecto creado mediante:
-````console
+```console
 > dotnet new blazorwasm -o BlazorAppDemo
 ```
