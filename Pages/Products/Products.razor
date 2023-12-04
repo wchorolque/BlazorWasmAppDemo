@@ -1,10 +1,13 @@
 @page "/product"
 @inject ILogger<Products> logger;
 @inject IProductService productService;
+@inject NavigationManager NavigationManager
 
 <PageTitle>Products</PageTitle>
 
 <ModuleTitle Title="Products" />
+
+<button class="btn btn-green" @onclick="@(() => NavigationManager.NavigateTo("/addproduct"))">ADD</button>
 
 @if (products?.Count > 0)
 {
@@ -16,11 +19,6 @@
                 <div class="card-body">
                     <h4><b>@product.Title</b></h4>
                     <p>@product.Price?.ToString("C") </p>
-                    <!--
-                    <button title="Eliminar" class="btn btn-danger btn-delete" 
-                    <span class="oi oi-trash"></span>
-                    </button>
-                    -->
                 </div>
             </div>
         }
